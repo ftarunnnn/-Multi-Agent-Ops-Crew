@@ -1,5 +1,6 @@
 import time
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional, Dict, Any
 from src.orchestration import CrewRunner
@@ -9,6 +10,15 @@ app = FastAPI(
     title="Multi-Agent Ops Crew API",
     description="REST API for automated multi-agent data analytics and reporting.",
     version="1.0.0"
+)
+
+# Enable CORS for localhost frontend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 metrics = TelemetryMetrics()
@@ -30,11 +40,11 @@ def read_root():
 def run_crew(request: CrewRunRequest):
     start_time = time.time()
     try:
-        runner = CrewRunner(provider_name=request.llm_provider)
-        final_state = runner.kickoff(user_request=request.user_request)
+        runner = CrewRunner(provider_name=request.llm_provider or "gemini")
+        final_state = runner.kickoff(user_request=request.user_request or "AI Data Analysis Automation")
         duration = time.time() - start_time
         
-        quality_score = final_state.review_results.get("quality_score", 100)
+        quality_score = final_state.review_results.get("quality_score", 100) if final_state.review_results else 100
         metrics.record_run(task_id=final_state.task_id, duration=duration, quality_score=quality_score)
 
         return {
