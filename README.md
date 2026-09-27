@@ -9,6 +9,12 @@ Welcome to **Multi-Agent Ops Crew**, a complete, production-grade autonomous dat
 
 ---
 
+## 🖥️ Live Web UI Dashboard Preview
+
+![Multi-Agent Ops Crew Web Dashboard Preview](docs/screenshots/dashboard_preview.png)
+
+---
+
 ## 🎯 10 Project Phases Implementation Roadmap
 
 | Phase | Title | Description | Primary Deliverable |
@@ -55,7 +61,7 @@ Welcome to **Multi-Agent Ops Crew**, a complete, production-grade autonomous dat
 
 ### 1. Run via CLI
 ```bash
-python run_crew.py --task "AI Data Analysis Automation" --provider gemini
+python run_crew.py --task "Autonomous E-Commerce Revenue & Churn Analysis for Q1 2026" --provider gemini
 ```
 
 ### 2. Run Test Suite (Phase 9)
@@ -69,7 +75,7 @@ python -m uvicorn app.main:app --reload --port 8000
 ```
 
 ### 4. Interactive Web UI Dashboard (Phase 10)
-Open [`web/index.html`](file:///c:/Users/aruni/Desktop/New%20folder/web/index.html) in any modern web browser to interact with the full DAG visualizer and execution simulator!
+Open [`web/index.html`](file:///c:/Users/aruni/Desktop/New%20folder/web/index.html) (or `http://localhost:3000`) in any modern web browser to interact with the full DAG visualizer and execution simulator!
 
 ---
 

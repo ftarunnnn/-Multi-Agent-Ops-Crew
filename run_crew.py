@@ -1,4 +1,14 @@
+import sys
+import io
 import argparse
+
+# Ensure UTF-8 stdout encoding for Windows terminals
+if sys.stdout.encoding != 'utf-8':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
+
 from src.orchestration import CrewRunner
 
 def main():
@@ -8,14 +18,14 @@ def main():
     args = parser.parse_args()
 
     print("=" * 70)
-    print("🤖 Multi-Agent Ops Crew — 10-Phase Autonomous Data Science Pipeline")
+    print("Multi-Agent Ops Crew - 10-Phase Autonomous Data Science Pipeline")
     print("=" * 70)
     
     runner = CrewRunner(provider_name=args.provider)
     final_state = runner.kickoff(user_request=args.task)
 
     print("\n" + "=" * 70)
-    print("📄 FINAL VERIFIED EXECUTIVE REPORT")
+    print("FINAL VERIFIED EXECUTIVE REPORT")
     print("=" * 70 + "\n")
     print(final_state.final_report)
 
