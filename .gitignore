@@ -1,9 +1,33 @@
+# Environment and Secret Files (NEVER COMMIT)
+.env
+*.env
+.env.*
+*.pem
+*.key
+*.cert
+credentials.json
+secrets.json
+
+# Python Bytecode and Caches
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 .pytest_cache/
+.coverage
+htmlcov/
+
+# Logs and Data Output
 *.log
-.env
-dist/
-build/
+logs/
+data/raw/
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+
+# OS Files
+.DS_Store
+Thumbs.db
