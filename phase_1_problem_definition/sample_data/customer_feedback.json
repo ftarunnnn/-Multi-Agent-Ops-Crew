@@ -1,0 +1,30 @@
+[
+  {
+    "ticket_id": "TCK-1001",
+    "customer_segment": "Enterprise",
+    "sentiment": "Positive",
+    "feedback_text": "The new predictive dashboard feature cut our weekly reporting time by 60%. Excellent ROI.",
+    "category": "Product Features"
+  },
+  {
+    "ticket_id": "TCK-1002",
+    "customer_segment": "SMB",
+    "sentiment": "Negative",
+    "feedback_text": "CAC in Latin America is high relative to conversion speed. Need better localized payment integrations.",
+    "category": "Pricing"
+  },
+  {
+    "ticket_id": "TCK-1003",
+    "customer_segment": "Enterprise",
+    "sentiment": "Neutral",
+    "feedback_text": "API response time during peak hours increased slightly. Optimization needed.",
+    "category": "Performance"
+  },
+  {
+    "ticket_id": "TCK-1004",
+    "customer_segment": "Consumer",
+    "sentiment": "Positive",
+    "feedback_text": "Customer support answered within 5 minutes and solved our onboarding query smoothly.",
+    "category": "Support"
+  }
+]

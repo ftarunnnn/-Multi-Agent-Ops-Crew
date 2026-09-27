@@ -1,0 +1,29 @@
+{
+  "project_name": "AI Data Analysis Automation",
+  "version": "1.0.0",
+  "domain": "Revenue & Growth Analytics",
+  "data_sources": [
+    {
+      "id": "ds_sales",
+      "name": "Sales Metrics",
+      "type": "csv",
+      "file_path": "phase_1_problem_definition/sample_data/sales_metrics.csv",
+      "primary_key": "date",
+      "target_variable": "revenue_usd"
+    },
+    {
+      "id": "ds_feedback",
+      "name": "Customer Feedback",
+      "type": "json",
+      "file_path": "phase_1_problem_definition/sample_data/customer_feedback.json",
+      "primary_key": "ticket_id"
+    }
+  ],
+  "agent_targets": {
+    "data_agent": ["descriptive_stats", "correlation_matrix", "anomaly_detection"],
+    "ml_agent": ["revenue_forecast", "churn_driver_importance", "cac_efficiency"],
+    "research_agent": ["saas_growth_benchmarks_2026", "cac_payback_period_standards"],
+    "reviewer_agent": ["numerical_consistency_check", "hallucination_validation"],
+    "report_agent": ["executive_summary", "actionable_recommendations"]
+  }
+}
