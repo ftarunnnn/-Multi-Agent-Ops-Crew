@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Agent Ops Crew — Autonomous AI Data Analysis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header Navbar -->
+    <header class="navbar">
+      <div class="logo-group">
+        <div class="logo-icon">🤖</div>
+        <div>
+          <h1 class="logo-title">Multi-Agent Ops Crew</h1>
+          <p class="logo-subtitle">10-Phase Autonomous Data Science & AI Ops System</p>
+        </div>
+      </div>
+      <div class="nav-controls">
+        <div class="badge badge-success">
+          <span class="status-dot"></span> System Status: Online (10 Phases Active)
+        </div>
+        <a href="https://github.com/ftarunnnn/-Multi-Agent-Ops-Crew" target="_blank" class="github-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub Repo
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Grid Content -->
+    <main class="dashboard-grid">
+      <!-- Left Column: Controls & Execution Panel -->
+      <section class="panel panel-controls">
+        <h2 class="panel-title">🚀 Crew Execution Controller</h2>
+        
+        <div class="input-group">
+          <label for="taskInput">Project Goal / Task Prompt</label>
+          <input type="text" id="taskInput" value="AI Data Analysis Automation (Sales & Customer Churn)" placeholder="Enter analytics objective...">
+        </div>
+
+        <div class="grid-2col">
+          <div class="input-group">
+            <label for="llmSelect">LLM Provider (Phase 4)</label>
+            <select id="llmSelect">
+              <option value="gemini">Google Gemini (Gemini 1.5 Pro)</option>
+              <option value="openai">OpenAI (GPT-4o)</option>
+              <option value="claude">Anthropic Claude 3.5 Sonnet</option>
+              <option value="local">Local LLM (Ollama / vLLM)</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="modeSelect">Workflow Mode (Phase 8)</label>
+            <select id="modeSelect">
+              <option value="parallel">Parallel Fanout & Audit Sync</option>
+              <option value="sequential">Strict Sequential</option>
+            </select>
+          </div>
+        </div>
+
+        <button id="runBtn" class="primary-btn">
+          <span id="btnIcon">▶</span> Execute Multi-Agent Ops Crew
+        </button>
+
+        <hr class="divider">
+
+        <!-- 10-Phase Status Progress Tracker -->
+        <h3 class="section-subtitle">📌 10 Project Phases Progress</h3>
+        <div class="phases-grid" id="phasesGrid">
+          <!-- Dynamically populated phase cards -->
+        </div>
+      </section>
+
+      <!-- Center Column: Multi-Agent DAG Visualizer -->
+      <section class="panel panel-dag">
+        <h2 class="panel-title">🕸️ Agent Topology & DAG Execution (Phase 2 & 6)</h2>
+        
+        <div class="dag-container">
+          <!-- Flowchart SVG / Nodes -->
+          <div class="node node-user" id="nodeUser">
+            <div class="node-icon">👤</div>
+            <div class="node-label">USER INPUT</div>
+          </div>
+          
+          <div class="connector-line">↓</div>
+
+          <div class="node node-agent node-planner" id="nodePlanner">
+            <div class="node-icon">🧠</div>
+            <div class="node-label">PLANNER AGENT</div>
+            <div class="node-role">Architect & DAG Planner</div>
+          </div>
+
+          <div class="connector-line">↓</div>
+
+          <div class="parallel-layer">
+            <div class="node node-agent" id="nodeData">
+              <div class="node-icon">📊</div>
+              <div class="node-label">DATA AGENT</div>
+              <div class="node-role">Pandas Analytics & KPIs</div>
+            </div>
+            <div class="node node-agent" id="nodeML">
+              <div class="node-icon">🤖</div>
+              <div class="node-label">ML AGENT</div>
+              <div class="node-role">Regression & Drivers</div>
+            </div>
+            <div class="node node-agent" id="nodeResearch">
+              <div class="node-icon">🔍</div>
+              <div class="node-label">RESEARCH AGENT</div>
+              <div class="node-role">SaaS Benchmarks (RAG)</div>
+            </div>
+          </div>
+
+          <div class="connector-line">↓</div>
+
+          <div class="node node-agent node-reviewer" id="nodeReviewer">
+            <div class="node-icon">🛡️</div>
+            <div class="node-label">REVIEWER AGENT</div>
+            <div class="node-role">Zero-Hallucination Audit</div>
+          </div>
+
+          <div class="connector-line">↓</div>
+
+          <div class="node node-agent node-report" id="nodeReport">
+            <div class="node-icon">📝</div>
+            <div class="node-label">REPORT AGENT</div>
+            <div class="node-role">Executive Synthesis</div>
+          </div>
+        </div>
+
+        <!-- Terminal Log Box -->
+        <div class="terminal-box">
+          <div class="terminal-header">
+            <span>📟 Live System Execution Log (Phase 10)</span>
+            <span class="terminal-clear" onclick="clearLogs()">Clear</span>
+          </div>
+          <div class="terminal-body" id="logTerminal">
+            <div class="log-line">[SYSTEM] Ready to initiate Multi-Agent Ops Crew...</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Column: Final Executive Report & Audit Metrics -->
+      <section class="panel panel-output">
+        <h2 class="panel-title">📄 Verified Executive Output (Phase 9 & 10)</h2>
+        
+        <div class="metrics-cards">
+          <div class="metric-card">
+            <div class="metric-value" id="metricScore">100/100</div>
+            <div class="metric-label">Audit Quality Score</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value" id="metricStatus">APPROVED</div>
+            <div class="metric-label">Review Status</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value" id="metricHallucination">0</div>
+            <div class="metric-label">Hallucinations</div>
+          </div>
+        </div>
+
+        <div class="report-box" id="reportViewer">
+          <p class="placeholder-text">Click "Execute Multi-Agent Ops Crew" to generate live executive analytics report...</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
