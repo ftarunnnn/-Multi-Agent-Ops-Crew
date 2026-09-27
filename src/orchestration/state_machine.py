@@ -15,5 +15,5 @@ class StateMachine:
         }
         self.checkpoints.append(snapshot)
 
-    def get_last_checkpoint((self) -> Dict[str, Any]:
+    def get_last_checkpoint(self) -> Dict[str, Any]:
         return self.checkpoints[-1] if self.checkpoints else {}
