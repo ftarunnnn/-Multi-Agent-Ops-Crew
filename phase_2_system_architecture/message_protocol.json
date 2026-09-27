@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AgentMessageProtocol",
+  "type": "object",
+  "properties": {
+    "message_id": { "type": "string" },
+    "sender_agent": { "type": "string" },
+    "recipient_agent": { "type": "string" },
+    "timestamp": { "type": "string" },
+    "phase": { "type": "string" },
+    "payload": {
+      "type": "object",
+      "properties": {
+        "status": { "type": "string", "enum": ["SUCCESS", "FAILED", "NEEDS_REVISION"] },
+        "artifacts": { "type": "object" },
+        "error_message": { "type": ["string", "null"] }
+      },
+      "required": ["status", "artifacts"]
+    }
+  },
+  "required": ["message_id", "sender_agent", "recipient_agent", "timestamp", "phase", "payload"]
+}

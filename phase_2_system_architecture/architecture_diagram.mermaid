@@ -1,0 +1,17 @@
+graph TD
+    User([User Prompt / Task]) --> Planner[Planner Agent]
+    
+    subgraph Parallel Processing Layer
+        Planner --> Data[Data Agent]
+        Planner --> ML[ML Agent]
+        Planner --> Research[Research Agent]
+    end
+    
+    Data --> Reviewer[Reviewer Agent]
+    ML --> Reviewer
+    Research --> Reviewer
+    
+    Reviewer -->|Validation Passed| Report[Report Agent]
+    Reviewer -->|Hallucination / Error Detected| Planner
+    
+    Report --> FinalOutput([Final Executive Report & Artifacts])
